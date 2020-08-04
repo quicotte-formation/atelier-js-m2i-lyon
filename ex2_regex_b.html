@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let txt = "Né à Dubaï le 04-08-2020";
+    let regex = /(Né à )([a-z-ï]{2,})( le )([0-9-]{10})/i;
+    let groupes = txt.match( regex );
+    console.log( groupes );
+</script>
+</body>
+</html>
