@@ -19,6 +19,32 @@
     !!!!! VOIR SUPPORT COURS PAGES 10 et 11 !!!!!
     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
      */
+
+    // 1 création tab 1000 elem
+    let tab = new Array(1000);
+
+    // 2 Remplissage *
+    tab.fill('*');
+
+    // 3 Suppression 990 elems
+    for(let i=0;i<990;i++){
+        tab.pop();
+    }
+
+    // 4 Calcul
+    for(let i=0;i<10;i++){
+        tab[i] = 3 * (i+1);
+    }
+
+    // 5 Inversion tab
+    tab.reverse();
+
+    // 6 Affichage
+    console.log( tab );
+
+    // 7 et 8
+    console.log( 'Indice 3 : ' + tab.indexOf(3) );
+    console.log( 'Indice 30 : ' + tab.indexOf(30) );
 </script>
 </body>
 </html>
