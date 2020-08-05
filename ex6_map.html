@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let tabRes = ['rouge','vert','bleu'].map( elemAct => elemAct.toUpperCase() );
+    /*
+    EQUIVALENT A :
+    let tabRes = ['rouge','vert','bleu'].map( elemAct => {
+        return elemAct.toUpperCase();
+     } );
+     */
+    console.log(tabRes);
+
+
+    tabRes = [2,3,4,5].map( n => {
+        return [ n, n*n, n*n*n ];
+    } );
+    console.log(tabRes);
+</script>
+</body>
+</html>

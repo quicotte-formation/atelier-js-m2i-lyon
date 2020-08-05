@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // 1. Avec fonction forEach, afficher chaque élément en maj
+    ['estonie','lettonie','littuanie'].forEach( (elemAct)=>{
+        console.log(elemAct.toUpperCase());
+    } );
+
+    // 2. Avec fonction forEach, afficher le carré de chaque élément tab
+    [2,3,4,5,6,7].forEach( (elem)=>{
+        console.log( elem * elem );
+    } );
+
+    let tabCarres = [2,5,7].map( (elemAct) => {
+        return elemAct * elemAct;
+    } );
+
+    let tabPaysCapitales = [
+        {pays: 'France', capitale: 'Paris'},
+        {pays: 'Chine', capitale: 'Pakin'},
+        {pays: 'Bénin', capitale: 'Porto-Novo'}
+    ];
+
+</script>
+</body>
+</html>
