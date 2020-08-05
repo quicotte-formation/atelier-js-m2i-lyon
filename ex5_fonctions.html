@@ -34,6 +34,40 @@
         let tab = creerTableau( 5, '*'); // ["*","*","*","*","*"]
         let tab2 = creerTableau( 3, '?'); // ["?","?","?"]
      */
+
+
+    let creeTableau = (nbElems, contenuElem) => {
+
+        let tab = new Array(nbElems);
+        tab.fill(contenuElem);
+
+        return tab;
+    };
+
+    /**
+     * Fonction qui met chaque élém d'un tableau en maj
+     */
+    let metChaqueElemEnMak = (tab) => {
+
+        for(let i=0;i<tab.length;i++){
+            tab[i] = tab[i].toUpperCase();
+        }
+    };
+
+    /**
+     * Fonction renvoie un nouveau tab en mettant chaque élément
+     * du tableaux passé en param, en maj.
+     */
+
+    let creeCopieMaj = (tab) => {
+
+        let nouveauTab = [];
+        for(let i=0;i<tab.length;i++){
+            nouveauTab.push( tab[i].toUpperCase() );
+        }
+
+        return nouveauTab;
+    };
 </script>
 </body>
 </html>
