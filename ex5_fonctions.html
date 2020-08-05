@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // Ecrire une fonction qui return n puissance p.
+    // Ensuite l'essayer comme ceci:
+    // console.log( puissance(2,8)  );// Affiche 256
+    // console.log( puissance(3,3)  );// Affiche 27
+
+    let carre = (nombre,p2,p3) => {
+        return nombre * nombre;
+    };
+
+    let puissance = (n, p) => {
+
+        let res = 1;
+        for(let i=0;i<p;i++){
+            res *= n;
+        }
+
+        return res;
+    };
+
+    /*
+        Ecrire une fonction qui renvoie un tableau.
+
+        Utilisation:
+
+        let tab = creerTableau( 5, '*'); // ["*","*","*","*","*"]
+        let tab2 = creerTableau( 3, '?'); // ["?","?","?"]
+     */
+</script>
+</body>
+</html>
