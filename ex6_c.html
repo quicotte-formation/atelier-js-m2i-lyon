@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let paysCapitales = [
+        {pays: 'Japon', capitale: 'Tokyo', pop: 50},
+        {pays: 'Japon', capitale: 'Tokya', pop: 50},
+        {pays: 'Chine', capitale: 'Pekin', pop: 1200},
+        {pays: 'Vietnam', capitale: 'Saïgon', pop: 17}
+    ];
+
+    let paysDeMoinsDe100MillionsHab = paysCapitales.filter( elem => {
+        if( elem.pop>100 ){
+            return false;
+        }else{
+            return true;
+        }
+    } );
+
+    console.log( paysDeMoinsDe100MillionsHab );
+
+    let paysCapitalesTries = paysCapitales.sort( (elem1,elem2)=>{
+        if( elem1.capitale<elem2.capitale ){
+            return -1;
+        }else if( elem1.capitale>elem2.capitale ){
+            return 1;
+        }else{
+            return 0;
+        }
+    } );
+    console.log( paysCapitalesTries );
+
+</script>
+</body>
+</html>
