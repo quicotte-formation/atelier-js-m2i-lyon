@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    Titre recherché : <input id="titre">
+    <button onclick="clicSurBouton();" id="rechercher">Rechercher</button>
+<script>
+    let clicSurBouton = () => {
+        let monInput = document.querySelector("#titre");
+        alert("Recherche : " + monInput.value );
+    };
+</script>
+</body>
+</html>
