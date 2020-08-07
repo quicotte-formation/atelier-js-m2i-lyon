@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h1>
+        Rechercher un film
+    </h1>
+    <form>
+        <label>Titre</label>
+        <input type="text" id="titre">
+        <br>
+        <label>Durée mini</label>
+        <input type="text" id="duree">
+        <br>
+        <label>Année</label>
+        <input type="text" id="annee">
+        <br>
+        <button type="button" onclick="clicBoutonRecherche();">Rechercher</button>
+    </form>
+</div>
+<div>
+    <h1>Résultats trouvés</h1>
+    <div id="resultats">
+        <!--
+            Avec Javascript, créer dans un script ( en bas )
+            un tableau de séries possédant chacune (titre,timewatch* et année).
+            * le timewatch c'est la durée de la série, on zappe le genre dont j'avais parlé plus tot
+
+            Au clic sur le bouton rechercher,
+            1. vider le div #resultats ( demElem.innerHTML = '' )
+            2. filtrer votre tableau pour correspondre
+            aux critères de recherche
+            3. générer autant de div enfants ( de #resultats )
+            que vous avez de films filtrée
+         -->
+    </div>
+</div>
+<script>
+    let series = [{"titre": "Game of Thrones", "annee": "2011", "timewatch": "52"}, {
+        "titre": "Breaking Bad",
+        "annee": "2008",
+        "timewatch": "42"
+    }, {"titre": "Chernobyl", "annee": "2019", "timewatch": "58"}, {
+        "titre": "Peaky Blinders",
+        "annee": "2013",
+        "timewatch": "52"
+    }, {"titre": "Dans leur regard", "annee": "2019", "timewatch": null}, {
+        "titre": "Stranger Things",
+        "annee": "2016",
+        "timewatch": "55"
+    }, {"titre": "This Is Us", "annee": "2016", "timewatch": "42"}, {
+        "titre": "Narcos",
+        "annee": "2015",
+        "timewatch": "52"
+    }, {"titre": "Sherlock", "annee": "2010", "timewatch": "90"}, {
+        "titre": "Fargo (2014)",
+        "annee": "2014",
+        "timewatch": "53"
+    }, {"titre": "True Detective", "annee": "2014", "timewatch": "55"}, {
+        "titre": "The Walking Dead",
+        "annee": "2010",
+        "timewatch": "44"
+    }, {"titre": "Poursuis tes r\u00eaves", "annee": "2019", "timewatch": "40"}, {
+        "titre": "Vikings",
+        "annee": "2013",
+        "timewatch": "52"
+    }, {"titre": "Skam", "annee": "2015", "timewatch": "30"}, {
+        "titre": "Westworld",
+        "annee": "2016",
+        "timewatch": "52"
+    }, {
+        "titre": "The Handmaid\u2019s Tale : la servante \u00e9carlate",
+        "annee": "2017",
+        "timewatch": "60"
+    }, {"titre": "Anne with an \"E\"", "annee": "2017", "timewatch": "60"}, {
+        "titre": "Dexter",
+        "annee": "2006",
+        "timewatch": "52"
+    }, {"titre": "Parks and Recreation", "annee": "2009", "timewatch": "22"}, {
+        "titre": "The Night Of",
+        "annee": "2016",
+        "timewatch": "58"
+    }, {"titre": "The Boys", "annee": "2019", "timewatch": "60"}, {
+        "titre": "Gomorra",
+        "annee": "2014",
+        "timewatch": "52"
+    }, {"titre": "Black Mirror", "annee": "2011", "timewatch": "60"}, {
+        "titre": "Shameless (US)",
+        "annee": "2011",
+        "timewatch": "45"
+    }, {"titre": "The Get Down", "annee": "2016", "timewatch": "60"}, {
+        "titre": "Outlander",
+        "annee": "2014",
+        "timewatch": "42"
+    }, {"titre": "Downton Abbey", "annee": "2010", "timewatch": "58"}, {
+        "titre": "MINDHUNTER",
+        "annee": "2017",
+        "timewatch": "50"
+    }, {"titre": "Dark", "annee": "2017", "timewatch": "60"}, {
+        "titre": "Banshee",
+        "annee": "2013",
+        "timewatch": "52"
+    }, {"titre": "Mr. Robot", "annee": "2015", "timewatch": "45"}, {
+        "titre": "Utopia",
+        "annee": "2013",
+        "timewatch": "60"
+    }, {
+        "titre": "Le Bureau des L\u00e9gendes",
+        "annee": "2015",
+        "timewatch": "52"
+    }, {"titre": "The Haunting of Hill House", "annee": "2018", "timewatch": "60"}, {
+        "titre": "Happy!",
+        "annee": "2017",
+        "timewatch": "42"
+    }, {"titre": "House of Cards", "annee": "2013", "timewatch": "52"}, {
+        "titre": "The Crown",
+        "annee": "2016",
+        "timewatch": "58"
+    }, {"titre": "Godless", "annee": "2017", "timewatch": "60"}, {
+        "titre": "Broadchurch",
+        "annee": "2013",
+        "timewatch": "52"
+    }, {"titre": "Marvel's The Punisher", "annee": "2017", "timewatch": "53"}, {
+        "titre": "On My Block",
+        "annee": "2018",
+        "timewatch": "30"
+    }, {"titre": "Brooklyn Nine-Nine", "annee": "2013", "timewatch": "22"}, {
+        "titre": "The Last Kingdom",
+        "annee": "2015",
+        "timewatch": "60"
+    }, {"titre": "Marvel's Daredevil", "annee": "2015", "timewatch": "52"}, {
+        "titre": "Murder",
+        "annee": "2014",
+        "timewatch": "42"
+    }, {"titre": "Wentworth", "annee": "2013", "timewatch": "43"}, {
+        "titre": "Years and Years",
+        "annee": "2019",
+        "timewatch": "60"
+    }, {"titre": "Orphan Black", "annee": "2013", "timewatch": "42"}, {
+        "titre": "Suits : avocats sur mesure",
+        "annee": "2011",
+        "timewatch": "42"
+    }];
+
+    let clicBoutonRecherche = () => {
+
+        // Récupère données entrée par l'utilisateur
+        let titre = document.querySelector('#titre').value.toUpperCase();
+        let duree = document.querySelector('#duree').value;
+        let annee = document.querySelector('#annee').value;
+
+        // Filtre résultats
+        let seriesFiltrees = series.filter(serieAct => {
+
+            let titreSerieAct = serieAct.titre.toUpperCase();
+
+            if (titre != '' && titreSerieAct.indexOf(titre) < 0) {
+                return false;
+            } else if (duree != '' && serieAct.timewatch < duree) {
+                return false;
+            } else if ( annee!='' && serieAct.annee!=annee) {
+                return false;
+            } else {
+                return true;
+            }
+        });
+
+        // Petit plus, trie résultats par titre alpha
+        seriesFiltrees = seriesFiltrees.sort( (serie1, serie2)=>{
+            if(serie1.titre>serie2.titre){
+                return 1;
+            }else if(serie1.titre<serie2.titre){
+                return -1;
+            }else{
+                return 0;
+            }
+        } );
+
+        // Efface résultats dans #resultats et les génère élems DOM nécessaires
+        document.querySelector('#resultats').innerHTML = '';// Vide composant
+        seriesFiltrees.forEach(serieAct => {
+            let divSerieAct = document.createElement('div');
+            divSerieAct.innerHTML = serieAct.titre
+                + " " + serieAct.annee
+                + " " + serieAct.timewatch;
+
+            document.querySelector('#resultats').appendChild(divSerieAct);
+        });
+
+    }
+</script>
+</body>
+</html>
